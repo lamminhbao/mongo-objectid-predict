@@ -1,5 +1,5 @@
 import time
-
+from datetime import datetime
 
 class ObjectId(object):
     """
@@ -17,6 +17,7 @@ class ObjectId(object):
         self.machine = machine
         self.process = process
         self.counter = counter
+        print('debug> obj.epoch %s, obj.machine %s, obj.process %s, obj.counter %d' % (datetime.fromtimestamp(self.epoch).isoformat(), self.machine, self.process, self.counter))
 
     def __str__(self):
         return '%08x%s%s%06x' % (self.epoch,
